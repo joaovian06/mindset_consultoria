@@ -4,5 +4,8 @@ FactoryBot.define do
     status { 1 }
     agreement { "MyString" }
     phone_number { "(019)99973-8339" }
+    trait :invalid do
+      cnpj { "" }
+    end
   end
 end
