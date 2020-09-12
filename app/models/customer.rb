@@ -4,6 +4,7 @@ class Customer < ApplicationRecord
   validates :cnpj,
             :status,
             :phone_number,
+            :corporate_name,
             presence: true
 
   validates :cnpj, uniqueness: true

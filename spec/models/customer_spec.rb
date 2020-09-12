@@ -6,6 +6,7 @@ RSpec.describe Customer, type: :model do
       it { is_expected.to validate_presence_of(:cnpj) }
       it { is_expected.to validate_presence_of(:status) }
       it { is_expected.to validate_presence_of(:phone_number) }
+      it { is_expected.to validate_presence_of(:corporate_name) }
     end
 
     describe 'allow values' do
