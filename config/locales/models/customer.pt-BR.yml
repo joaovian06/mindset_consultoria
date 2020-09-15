@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      customer: Cliente
+    attributes:
+      customer:
+        cnpj: CNPJ
+        phone_number: Número de Telefone
+        corporate_name: Razão Social
+        agreement: Contrato
+      customer/status:
+        active: Ativo
+        disable: Inativo
+        pending: Pendente
