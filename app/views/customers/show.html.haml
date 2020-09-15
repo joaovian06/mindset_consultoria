@@ -4,15 +4,16 @@
       .card
         .card-header
           .row
-            %h2.col-11= t('.customer_attributes')
-            .col
-              %ul.nav
-                %li.nav-item
-                  %a.nav-link= link_to t('.back'), customers_path
+            %h2.col-10= t('.customer_attributes')
             .col
               %ul.nav
                 %li.nav-item
                   %a.nav-link= link_to t('.edit'), edit_customer_path(@customer)
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.delete'), customer_path(@customer), method: :delete,
+                  data: { confirm: t('.delete_data_confirm') }, class: 'text-danger'
         .card-body
           .container-fluid.text-left
             .table.border.rounded.my-4
@@ -32,7 +33,7 @@
                 %tr
                   .row.p-2.m-0
                     .col= Customer.human_attribute_name(:status)
-                    .col= @customer.status
+                    .col= Customer.human_attribute_name("status.#{@customer.status}")
             .container-fluid.border.rounded.my-4.py-2
               #agreement
                 %h3= t('.agreement')

@@ -12,7 +12,7 @@
       - @customers.each do |customer|
         .container-fluid.my-4
           .card
-            .card-header= customer.status
+            .card-header= Customer.human_attribute_name("status.#{customer.status}")
             .card-body
               .card-title= link_to customer.corporate_name, customer_path(customer), class: 'text-dark'
               .card-text= customer.agreement
