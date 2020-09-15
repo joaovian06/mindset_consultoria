@@ -1,2 +1,18 @@
-%h1 Customers#index
-%p Find me in app/views/customer/index.html.erb
+.row.my-4
+  .col
+    %h1= t('.customers')
+
+.container-fluid
+  .row.my-4.justify-content-center
+    .col-sm-1
+      .button.btn-primary.rounded= link_to t('.new_customer'), new_customer_path, class: 'text-white'
+
+  .row.justify-content-center
+    .col-sm-6.border.rounded.mx-2
+      - @customers.each do |customer|
+        .container-fluid.my-4
+          .card
+            .card-header= customer.status
+            .card-body
+              .card-title= link_to customer.corporate_name, customer_path(customer), class: 'text-dark'
+              .card-text= customer.agreement
