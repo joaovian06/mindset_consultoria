@@ -6,6 +6,7 @@ RSpec.describe Consultant, type: :model do
       it { is_expected.to validate_presence_of(:cpf) }
       it { is_expected.to validate_presence_of(:level) }
       it { is_expected.to validate_presence_of(:phone_number) }
+      it { is_expected.to validate_presence_of(:name) }
     end
 
     describe 'uniqueness' do

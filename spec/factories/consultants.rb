@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :consultant do
+    name { Faker::Name.name_with_middle }
     cpf { BRDocuments::CPF.generate }
     level { 1 }
     registration_num {  }

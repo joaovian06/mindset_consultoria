@@ -6,6 +6,7 @@ class Consultant < ApplicationRecord
   validates :cpf,
             :level,
             :phone_number,
+            :name,
             presence: true
 
   validates :cpf, uniqueness: true
