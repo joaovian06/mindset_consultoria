@@ -1,0 +1,12 @@
+.container-fluid.px-0
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+    = link_to customers_path, class: 'navbar-brand text-white' do
+      = t('.mindset')
+    %button.navbar-toggler{ type: 'button', data: { toggle: 'collapse', target: '#navbarSupportedContent' }, 'arial-controls': 'navbarSuportedContent', 'aria-expanded': 'flase', 'aria-label': 'Toggle navigation' }
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarSuportedContent
+      %ul.navbar-nav
+        %li.nav-item
+          = link_to t('.customers'), customers_path, class: 'nav-link text-white'
+        %li.nav-item
+          = link_to t('.consultants'), consultants_path, class: 'nav-link text-white'
