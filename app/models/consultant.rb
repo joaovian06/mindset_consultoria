@@ -9,6 +9,8 @@ class Consultant < ApplicationRecord
             :name,
             presence: true
 
+  validates_length_of :name, minimum: 15, on: :create
+
   validates :cpf, uniqueness: true
 
   validates_format_of :cpf, with: %r/\d{3}.\d{3}.\d{3}-\d{2}/

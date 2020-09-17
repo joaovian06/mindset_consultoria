@@ -9,6 +9,10 @@ RSpec.describe Consultant, type: :model do
       it { is_expected.to validate_presence_of(:name) }
     end
 
+    describe 'length' do
+      it { is_expected.to validate_length_of(:name).is_at_least(15).on(:create) }
+    end
+
     describe 'uniqueness' do
       it { is_expected.to validate_uniqueness_of(:cpf) }
     end
