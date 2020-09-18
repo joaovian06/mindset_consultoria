@@ -1,2 +1,19 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+= stylesheet_link_tag 'views/home/index'
+
+= render "carousel_notice"
+
+.jumbotron.jumbotron-fluid.bg-info
+  .container
+    .row
+      .col
+        .card
+          .card-body
+            %h2.card-title= link_to t('.customers'), customers_path, class: 'text-dark'
+            .card-text.my-4= t('.customers_description')
+
+      .col
+        .card
+          .card-body
+            %h2.card-title= link_to t('.consultants'), consultants_path, class: 'text-dark'
+            .card-text.my-4= t('.consultants_description')
+

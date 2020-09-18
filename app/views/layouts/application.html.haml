@@ -7,9 +7,11 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body.bg-light
     = render 'shared/shared_header'
 
-    .container-fluid.text-center.my-5
+    .container-fluid.text-center.py-5.my-5
       = render 'shared/alert'
       = yield
+
+    = render 'shared/shared_footer'
