@@ -4,11 +4,11 @@
 
 .container-fluid
   .row.my-4.justify-content-center
-    .col-sm-1
+    .col-xl-1
       .button.btn-primary.rounded= link_to t('.new_customer'), new_customer_path, class: 'text-white'
 
   .row.justify-content-center
-    .col-sm-6.border.rounded.mx-2
+    .col-xl-6.border.rounded.mx-2
       - @customers.each do |customer|
         .container-fluid.my-4
           .card

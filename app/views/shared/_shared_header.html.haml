@@ -3,9 +3,9 @@
   %nav.navbar.navbar-expand-lg.navbar-light.bg-dark
     = link_to root_path, class: 'navbar-brand text-white' do
       = image_tag "logo.png", size: "80x80", class: 'logo'
-    %button.navbar-toggler{ type: 'button', data: { toggle: 'collapse', target: '#navbarSupportedContent' }, 'arial-controls': 'navbarSuportedContent', 'aria-expanded': 'flase', 'aria-label': 'Toggle navigation' }
+    %button.navbar-toggler{ type: 'button', data: { toggle: 'collapse', target: '#navbarNav' }, 'arial-controls': 'navbarSuportedContent', 'aria-expanded': 'flase', 'aria-label': 'Toggle navigation' }
       %span.navbar-toggler-icon
-    .collapse.navbar-collapse#navbarSuportedContent
+    .collapse.navbar-collapse#navbarNav
       %ul.navbar-nav
         %li.nav-item
           = link_to t('.customers'), customers_path, class: 'nav-link text-white'
