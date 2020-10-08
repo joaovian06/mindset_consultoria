@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_031437) do
+ActiveRecord::Schema.define(version: 2020_10_08_222115) do
 
   create_table "consultants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "cpf"
@@ -32,4 +32,20 @@ ActiveRecord::Schema.define(version: 2020_09_17_031437) do
     t.string "corporate_name"
   end
 
+  create_table "treatments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "type"
+    t.integer "status"
+    t.integer "rate"
+    t.string "description"
+    t.integer "budget"
+    t.bigint "customer_id"
+    t.bigint "consultant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["consultant_id"], name: "index_treatments_on_consultant_id"
+    t.index ["customer_id"], name: "index_treatments_on_customer_id"
+  end
+
+  add_foreign_key "treatments", "consultants"
+  add_foreign_key "treatments", "customers"
 end
