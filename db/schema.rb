@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_222115) do
+ActiveRecord::Schema.define(version: 2020_10_09_031237) do
 
   create_table "consultants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "cpf"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_222115) do
   end
 
   create_table "treatments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "type"
+    t.integer "treatment_type"
     t.integer "status"
     t.integer "rate"
     t.string "description"
