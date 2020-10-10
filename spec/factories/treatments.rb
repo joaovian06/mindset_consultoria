@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :treatment do
-    type { 1 }
+    treatment_type { 1 }
     status { 1 }
     rate { 5 }
     description { "A default description. Please describe the treatment." }
@@ -9,7 +9,7 @@ FactoryBot.define do
     consultant
 
     trait :invalid do
-      type { nil }
+      treatment_type { nil }
     end
   end
 end
