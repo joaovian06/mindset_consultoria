@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CustomersController, type: :controller do
   let(:customer) { create(:customer) }
-  let(:permitted_params) { %i[cnpj status agreement phone_number] }
+  let(:permitted_params) { %i[cnpj status agreement phone_number corporate_name] }
   let(:valid_params) { { id: customer.id, customer: customer.attributes } }
 
   describe 'before_actions' do
@@ -11,7 +11,7 @@ RSpec.describe CustomersController, type: :controller do
   end
 
   describe 'GET #index' do
-    let!(:customers) { create_list(:customer, 10) }
+    let!(:customers) { create_list(:customer, 2) }
 
     before { get :index }
 
@@ -65,13 +65,16 @@ RSpec.describe CustomersController, type: :controller do
   describe 'POST #create' do
     context 'valid params' do
       let(:customer) { build(:customer) }
-      let(:valid_params) { { customer: customer.attributes } }
-
-      before { post :create, params: valid_params }
 
       it { is_expected.to permit(*permitted_params).for(:create, params: valid_params).on(:customer) }
-      it { expect(response).to redirect_to(customer_path(assigns[:customer])) }
-      it { expect(controller).to set_flash[:success] }
+      it { expect { post :create, params: valid_params }.to change(Customer, :count).by(1) }
+
+      context 'redirects and flash' do
+        before { post :create, params: valid_params }
+
+        it { expect(response).to redirect_to(customer_path(assigns[:customer])) }
+        it { expect(controller).to set_flash[:success] }
+      end
     end
 
     context 'invalid params' do

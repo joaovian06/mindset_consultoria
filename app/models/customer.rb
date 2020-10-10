@@ -2,7 +2,6 @@ class Customer < ApplicationRecord
   enum status: %i[active disable pending]
 
   validates :cnpj,
-            :status,
             :phone_number,
             :corporate_name,
             presence: true
