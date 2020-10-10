@@ -20,8 +20,8 @@ class ConsultantsController < ApplicationController
       redirect_to_show
       flash[:success] = t('.success')
     else
-      render(:new)
       flash[:error] = t('.error')
+      render(:new)
     end
   end
 
@@ -56,7 +56,7 @@ class ConsultantsController < ApplicationController
   end
 
   def permit_params
-    params.require(:consultant).permit(:cpf, :level, :phone_number, :registration_num)
+    params.require(:consultant).permit(:name, :cpf, :level, :phone_number, :registration_num)
   end
 
   def redirect_to_index_missing_consultant

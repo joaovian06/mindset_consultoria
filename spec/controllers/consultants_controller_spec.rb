@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ConsultantsController, type: :controller do
   let(:consultant) { create(:consultant) }
   let(:valid_params) { { id: consultant.id, consultant: consultant.attributes } }
-  let(:permitted_params) { %i[cpf level phone_number registration_num] }
+  let(:permitted_params) { %i[name cpf level phone_number registration_num] }
 
   describe 'before actions' do
     it { expect(controller).to use_before_action(:find_consultant_by_id) }
@@ -65,13 +65,21 @@ RSpec.describe ConsultantsController, type: :controller do
   describe 'POST #create' do
     context 'valid params' do
       let(:consultant) { build(:consultant) }
-      let(:valid_params) { { consultant: consultant.attributes } }
-
-      before { post :create, params: valid_params }
 
       it { is_expected.to permit(*permitted_params).for(:create, params: valid_params).on(:consultant) }
-      it { expect(response).to redirect_to(consultant_path(assigns[:consultant])) }
-      it { expect(controller).to set_flash[:success] }
+
+      it do
+        expect do
+          post :create, params: valid_params
+        end.to change(Consultant, :count).by(1)
+      end
+
+      context 'redirect and flash' do
+        before { post :create, params: valid_params }
+
+        it { expect(response).to redirect_to(consultant_path(assigns[:consultant])) }
+        it { expect(controller).to set_flash[:success] }
+      end
     end
 
     context 'invalid params' do
