@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Treatment, type: :model do
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:type) }
+    it { is_expected.to validate_presence_of(:treatment_type) }
     it { is_expected.to validate_presence_of(:status) }
     it { is_expected.to validate_presence_of(:description) }
     it { is_expected.to validate_presence_of(:budget) }
@@ -26,7 +26,7 @@ RSpec.describe Treatment, type: :model do
 
   describe 'enums' do
     it do
-      is_expected.to define_enum_for(:type)
+      is_expected.to define_enum_for(:treatment_type)
         .with_values([:organizational, :accounting, :procedure, :project])
     end
 
