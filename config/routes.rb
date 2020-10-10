@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :treatments
   resources :consultants
   resources :customers
   root 'home#index'
