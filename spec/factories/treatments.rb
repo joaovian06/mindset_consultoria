@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :treatment do
+    title { Faker::Company.catch_phrase }
     treatment_type { 1 }
     status { 1 }
     rate { 5 }

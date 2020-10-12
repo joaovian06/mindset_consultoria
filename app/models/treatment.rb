@@ -10,6 +10,7 @@ class Treatment < ApplicationRecord
   validates_format_of :rate, with: %r/\d{0,5}/
 
   validates_presence_of :treatment_type,
+                        :title,
                         :status,
                         :description,
                         :budget
