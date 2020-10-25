@@ -1,0 +1,10 @@
+pt-BR:
+  treatments:
+    index:
+      treatments: Chamados
+      treatment_number: Número Chamado
+      title: Título
+      responsable: Responsável
+      status: Status
+      type: Tipo
+      created_at: Data Abertura
