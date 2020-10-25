@@ -3,5 +3,7 @@ pt-BR:
     index:
       customers: Clientes
       consultants: Consultores
+      treatments: Chamados
       customers_description: Atendemos empresas que procurar por consultoria na área de gestão de processos e projetos.
       consultants_description: Nossa equipe possui conhecimentos na área de gestão de recursos para sempre entregar o melhor para nossos clientes.
+      treatments_description: Nossos clientes podem abrir chamados e então nossa equipe especializada de atendimento ficará responsável por encontrar a melhor solução para sua empresa.

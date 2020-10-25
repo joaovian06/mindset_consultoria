@@ -2,6 +2,7 @@ pt-BR:
   treatments:
     index:
       treatments: Chamados
+      new_treatment: Novo Chamado
       treatment_number: Número Chamado
       title: Título
       responsable: Responsável
