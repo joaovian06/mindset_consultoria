@@ -72,6 +72,6 @@ class TreatmentsController < ApplicationController
   end
 
   def permit_params
-    params.require(:treatment).permit([:treatment_type, :status, :rate, :description, :budget, :customer_id, :consultant_id])
+    params.require(:treatment).permit([:treatment_type, :status, :rate, :description, :budget, :customer_id, :consultant_id, :title])
   end
 end

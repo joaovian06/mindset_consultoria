@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TreatmentsController, type: :controller do
   let(:treatment) { create(:treatment) }
   let(:valid_params) { { id: treatment, treatment: treatment.attributes } }
-  let(:permitted_params) { %i[treatment_type status rate description budget customer_id consultant_id] }
+  let(:permitted_params) { %i[treatment_type status rate description budget customer_id consultant_id title] }
   let(:customer) { create(:customer) }
   let(:consultant) { create(:consultant) }
 
