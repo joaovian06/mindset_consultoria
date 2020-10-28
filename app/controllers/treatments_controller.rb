@@ -2,6 +2,8 @@ class TreatmentsController < ApplicationController
   before_action :find_treatment_by_id, only: [:edit, :show, :update, :destroy]
   before_action :redirect_index_missing_treatment, only: [:edit, :show]
 
+  PERMITTED_PARAMS= [:treatment_type, :status, :rate, :description, :budget, :customer_id, :consultant_id, :title]
+
   def index
     @treatments = Treatment.all
   end
@@ -72,6 +74,6 @@ class TreatmentsController < ApplicationController
   end
 
   def permit_params
-    params.require(:treatment).permit([:treatment_type, :status, :rate, :description, :budget, :customer_id, :consultant_id, :title])
+    params.require(:treatment).permit(PERMITTED_PARAMS)
   end
 end
