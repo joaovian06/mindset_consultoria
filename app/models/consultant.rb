@@ -1,4 +1,8 @@
 class Consultant < ApplicationRecord
+  has_many :treatments, inverse_of: :consultant
+    accepts_nested_attributes_for :treatments, allow_destroy: true
+
+
   before_validation :set_registration_num
 
   enum level: %i[primary secondary]
