@@ -20,8 +20,8 @@ RSpec.describe Treatment, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to belong_to(:customer) }
-    it { is_expected.to belong_to(:consultant) }
+    it { is_expected.to belong_to(:customer).inverse_of(:treatments) }
+    it { is_expected.to belong_to(:consultant).inverse_of(:treatments) }
   end
 
   describe 'enums' do

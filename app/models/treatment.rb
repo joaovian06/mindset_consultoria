@@ -1,6 +1,6 @@
 class Treatment < ApplicationRecord
-  belongs_to :customer
-  belongs_to :consultant
+  belongs_to :customer, inverse_of: :treatments
+  belongs_to :consultant, inverse_of: :treatments
 
   enum treatment_type: [:organizational, :accounting, :procedure, :project]
   enum status: [:confirmation, :analyze, :in_progress, :pending_budget, :pending_payment]

@@ -48,7 +48,7 @@ RSpec.describe Consultant, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to have_many(:treatments).inverse_of(:consultant) }
+    it { is_expected.to have_many(:treatments).inverse_of(:consultant).dependent(:destroy) }
     it { is_expected.to accept_nested_attributes_for(:treatments).allow_destroy(true) }
   end
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ConsultantsController, type: :controller do
   let(:consultant) { create(:consultant) }
   let(:valid_params) { { id: consultant.id, consultant: consultant.attributes } }
-  let(:permitted_params) { %i[name cpf level phone_number registration_num] }
+  let(:permitted_params) { [:name, :cpf, :level, :phone_number, :registration_num] }
 
   describe 'before actions' do
     it { expect(controller).to use_before_action(:find_consultant_by_id) }

@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-  has_many :treatments, inverse_of: :customer
+  has_many :treatments, inverse_of: :customer, dependent: :destroy
   accepts_nested_attributes_for :treatments, allow_destroy: true
 
   enum status: %i[active disable pending]
