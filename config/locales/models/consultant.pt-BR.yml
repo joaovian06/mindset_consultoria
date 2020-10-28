@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      consultant: Consultor
+    attributes:
+      consultant:
+        cpf: CPF
+        phone_number: Número de Telefone
+        name: Nome
+        registration_num: Número da Matrícula
+      consultant/level:
+        primary: Primeiro Nível
+        secondary: Segundo Nível

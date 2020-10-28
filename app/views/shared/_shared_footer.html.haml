@@ -1,0 +1,32 @@
+%footer.footer.text-center.border-top.border-success
+  .container-fluid
+    .footer_info.align-middle
+      .row
+        .col
+          = image_tag "logo", size: "40x40"
+          .contact
+            = t('.mindset_support')
+        .col
+          .contact
+            = t('.mindset_tel')
+        .col
+          .contact
+            = mail_to 'suporte@mindset.com'
+  .container-fluid.py-4
+    .links
+      .row
+        .col
+          = link_to t('.youtube')
+        .col
+          = link_to t('.instagram')
+        .col
+          = link_to t('.facebook')
+  .container-fluid.py-4.border-bottom.border-success
+    .copyright
+      .text-alignment
+        = t('.mindset_consultoria')
+        %br
+        = t('.copyright')
+        = Date.current.year
+        %br
+        = t('.all_rights_reserved')

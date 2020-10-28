@@ -1,5 +1,7 @@
 {
   "name": "mindset_consultoria",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "ckeditor4": "^4.15.0"
+  }
 }

@@ -15,7 +15,7 @@ class CustomersController < ApplicationController
   end
 
   def update
-    if @customer.update(permit_params)
+    if @customer.update(customers_params)
       redirect_to_show
       flash[:success] = t('.success')
     else
@@ -25,13 +25,13 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.new(permit_params)
+    @customer = Customer.new(customers_params)
     if @customer.save
-      redirect_to_show
+      redirect_to(@customer)
       flash[:success] = t('.success')
     else
-      render(:new)
       flash[:error] = t('.error')
+      render(:new)
     end
   end
 
@@ -55,8 +55,8 @@ class CustomersController < ApplicationController
     redirect_to(customers_path)
   end
 
-  def permit_params
-    params.require(:customer).permit(:cnpj, :status, :agreement, :phone_number)
+  def customers_params
+    params.require(:customer).permit(:cnpj, :status, :agreement, :phone_number, :corporate_name)
   end
 
   def redirect_index_missing_customer

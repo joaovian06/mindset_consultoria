@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the CustomerHelper. For example:
-#
-# describe CustomerHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe CustomerHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'customers_for_select' do
+    let(:expected) do
+      Customer.pluck(:id, :corporate_name).map do |id, corporate_name|
+        ["#{corporate_name}", id]
+      end
+    end
+
+    before { create_list(:customer, 3) }
+
+    it do
+      expect(customers_for_select).to eq(expected)
+    end
+  end
 end

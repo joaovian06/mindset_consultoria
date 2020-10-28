@@ -1,0 +1,8 @@
+= simple_form_for @treatment do |f|
+  = f.input :title
+  = f.input :treatment_type, collection: treatment_types_for_select
+  = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+  = f.input :status, disabled: true, placeholder: Treatment.human_attribute_name("status.#{@treatment.status}")
+  = f.association :customer, collection: customers_for_select
+  = f.association :consultant, collection: consultants_for_select
+  .mt-4= f.submit
