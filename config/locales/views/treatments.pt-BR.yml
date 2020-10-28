@@ -3,9 +3,21 @@ pt-BR:
     index:
       treatments: Chamados
       new_treatment: Novo Chamado
-      treatment_number: Número Chamado
+      treatment_number: N. Chamado
       title: Título
       responsable: Responsável
       status: Status
       type: Tipo
       created_at: Data Abertura
+    show: &infos
+      treatment_attributes: Atributos do Chamado
+      edit: Editar
+      delete: Deletar
+      back: Voltar
+      delete_data_confirm: Você tem certeza?
+    edit:
+      edit_treatment_attributes: Editar Chamado
+      <<: *infos
+    new:
+      new_treatment: Novo Chamado
+      <<: *infos

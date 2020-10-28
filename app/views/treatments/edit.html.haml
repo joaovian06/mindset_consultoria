@@ -1,2 +1,18 @@
-%h1 Treatments#edit
-%p Find me in app/views/treatments/edit.html.haml
+.row.py-5
+  .col
+    .container-fluid.text-left
+      .card
+        .card-header
+          .row
+            %h2.col-10= t('.edit_treatment_attributes')
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.back'), treatment_path(@treatment)
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.delete'), treatment_path(@treatment), method: :delete,
+                  data: { confirm: t('.delete_data_confirm') }, class: 'text-danger'
+        .card-body
+          = render 'form'

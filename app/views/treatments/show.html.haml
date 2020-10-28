@@ -1,2 +1,43 @@
-%h1 Treatments#show
-%p Find me in app/views/treatments/show.html.haml
+.row.py-5
+  .col
+    .container-fluid.text-left
+      .card
+        .card-header
+          .row
+            %h2.col-10= t('.treatment_attributes')
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.edit'), edit_treatment_path(@treatment)
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.delete'), treatment_path(@treatment), method: :delete,
+                  data: { confirm: t('.delete_data_confirm') }, class: 'text-danger'
+        .card-body
+          #treatment-info.container-fluid.text-left
+            .table.border.rounded.my-4
+              .tbody
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Treatment.human_attribute_name(:title)
+                    .col= @treatment.title
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Treatment.human_attribute_name(:status)
+                    .col= Treatment.human_attribute_name("status.#{@treatment.status}")
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Treatment.human_attribute_name(:treatment_type)
+                    .col= Treatment.human_attribute_name("treatment_type.#{@treatment.treatment_type}")
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Treatment.human_attribute_name(:budget)
+                    .col= "#{t('number.currency.format.unit')} #{@treatment.budget}"
+                %tr
+                  .row.p-2.m-0
+                    .col= Treatment.human_attribute_name(:consultant)
+                    .col= link_to @treatment.consultant.name, consultant_path(@treatment.consultant), class: 'text-dark'
+            #treatment-description.container-fluid.border.rounded.p-2.mx-0
+              .h3= Treatment.human_attribute_name(:description)
+              = @treatment.description

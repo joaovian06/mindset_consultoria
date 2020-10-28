@@ -1,5 +1,3 @@
-= stylesheet_link_tag 'views/treatments/index'
-
 .row.my-4
   .col
     %h1= t('.treatments')
@@ -7,10 +5,10 @@
 .container-fluid
   .row.my-4.justify-content-center
     .col-xl-1
-      .button.btn-primary.rounded= link_to t('.new_treatment'), new_treatment_path, class: 'text-white'
+      .button.btn-block.btn-primary.rounded= link_to t('.new_treatment'), new_treatment_path, class: 'text-white'
 
   .row.justify-content-center
-    .col-6.border.rounded
+    .col-xs-9.border.rounded
       %table.table-striped
         %thead
           %tr
@@ -20,13 +18,12 @@
             %th= t('.status')
             %th= t('.type')
             %th= t('.created_at')
-
         %tbody
           - @treatments.each do |treatment|
             %tr
               %th= treatment.id
               %td= link_to treatment.title, treatment_path(treatment), class: 'text-dark'
               %td= treatment.consultant.name
-              %td= treatment.status
-              %td= treatment.treatment_type
-              %td= treatment.created_at.strftime("%d-%m-%Y")
+              %td= Treatment.human_attribute_name("status.#{treatment.status}")
+              %td= Treatment.human_attribute_name("treatment_type.#{treatment.treatment_type}")
+              %td= treatment.created_at.strftime("%d/%m/%Y")

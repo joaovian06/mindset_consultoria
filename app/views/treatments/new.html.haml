@@ -1,2 +1,13 @@
-%h1 Treatments#new
-%p Find me in app/views/treatments/new.html.haml
+.row.py-5
+  .col
+    .container-fluid.text-left
+      .card
+        .card-header
+          .row
+            %h2.col-10= t('.new_treatment')
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.back'), treatments_path
+        .card-body
+          = render 'form'
