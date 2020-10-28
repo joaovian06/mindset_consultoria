@@ -40,4 +40,4 @@
                     .col= link_to @treatment.consultant.name, consultant_path(@treatment.consultant), class: 'text-dark'
             #treatment-description.container-fluid.border.rounded.p-2.mx-0
               .h3= Treatment.human_attribute_name(:description)
-              = @treatment.description
+              = sanitize @treatment.description, tags: %w(div textarea)
