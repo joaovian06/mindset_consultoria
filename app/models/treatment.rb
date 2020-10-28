@@ -12,6 +12,5 @@ class Treatment < ApplicationRecord
   validates_presence_of :treatment_type,
                         :title,
                         :status,
-                        :description,
-                        :budget
+                        :description
 end

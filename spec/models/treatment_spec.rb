@@ -5,7 +5,6 @@ RSpec.describe Treatment, type: :model do
     it { is_expected.to validate_presence_of(:treatment_type) }
     it { is_expected.to validate_presence_of(:status) }
     it { is_expected.to validate_presence_of(:description) }
-    it { is_expected.to validate_presence_of(:budget) }
     it { is_expected.to validate_presence_of(:title) }
 
     it do
