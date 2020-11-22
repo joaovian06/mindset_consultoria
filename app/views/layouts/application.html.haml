@@ -2,11 +2,12 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title MindsetConsultoria
+    %title Mindset Consultoria
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
     %script{ src: "https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js" }
   %body.bg-light
     = render 'shared/shared_header'
