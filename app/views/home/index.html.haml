@@ -1,0 +1,23 @@
+= stylesheet_link_tag 'views/home/index'
+
+= render "carousel_notice"
+
+.container-fluid.bg-info.my-5
+  .row
+    .col
+      .card.h-100
+        .card-body
+          %h2.card-title= link_to t('.customers'), customers_path, class: 'text-dark'
+          .card-text.my-4= t('.customers_description')
+
+    .col
+      .card.h-100
+        .card-body
+          %h2.card-title= link_to t('.consultants'), consultants_path, class: 'text-dark'
+          .card-text.my-4= t('.consultants_description')
+    .col
+      .card.h-100
+        .card-body
+          %h2.card-title= link_to t('.treatments'), treatments_path, class: 'text-dark'
+          .card-text.my-4= t('.treatments_description')
+

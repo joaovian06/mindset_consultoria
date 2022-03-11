@@ -1,0 +1,40 @@
+.row.py-5
+  .col
+    .container-fluid.text-left
+      .card
+        .card-header
+          .row
+            %h2.col-10= t('.consultant_attributes')
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.edit'), edit_consultant_path(@consultant)
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.delete'), consultant_path(@consultant), method: :delete,
+                  data: { confirm: t('.delete_data_confirm') }, class: 'text-danger'
+        .card-body
+          .container-fluid.text-left
+            .table.border.rounded.my-4
+              .tbody
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Consultant.human_attribute_name(:name)
+                    .col= @consultant.name
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Consultant.human_attribute_name(:cpf)
+                    .col= @consultant.cpf
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Consultant.human_attribute_name(:registration_num)
+                    .col= @consultant.registration_num
+                %tr
+                  .row.p-2.m-0.border-bottom
+                    .col= Consultant.human_attribute_name(:phone_number)
+                    .col= @consultant.phone_number
+                %tr
+                  .row.p-2.m-0
+                    .col= Consultant.human_attribute_name(:level)
+                    .col= Consultant.human_attribute_name("level.#{@consultant.level}")

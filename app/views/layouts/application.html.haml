@@ -7,7 +7,12 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    .container-fluid.text-center.my-5
+    %script{ src: "https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js" }
+  %body.bg-light
+    = render 'shared/shared_header'
+
+    .container-fluid.text-center.px-0.py-5
       = render 'shared/alert'
       = yield
+
+    = render 'shared/shared_footer'

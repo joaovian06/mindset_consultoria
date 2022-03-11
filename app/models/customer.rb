@@ -1,8 +1,10 @@
 class Customer < ApplicationRecord
+  has_many :treatments, inverse_of: :customer
+  accepts_nested_attributes_for :treatments, allow_destroy: true
+
   enum status: %i[active disable pending]
 
   validates :cnpj,
-            :status,
             :phone_number,
             :corporate_name,
             presence: true

@@ -4,7 +4,6 @@ RSpec.describe Customer, type: :model do
   describe 'validations' do
     describe 'presence' do
       it { is_expected.to validate_presence_of(:cnpj) }
-      it { is_expected.to validate_presence_of(:status) }
       it { is_expected.to validate_presence_of(:phone_number) }
       it { is_expected.to validate_presence_of(:corporate_name) }
     end
@@ -21,5 +20,10 @@ RSpec.describe Customer, type: :model do
 
   describe 'enum' do
     it { is_expected.to define_enum_for(:status).with_values(%i[active disable pending]) }
+  end
+
+  describe 'associations' do
+    it { is_expected.to have_many(:treatments).inverse_of(:customer) }
+    it { is_expected.to accept_nested_attributes_for(:treatments).allow_destroy(true) }
   end
 end

@@ -12,6 +12,26 @@ pt-BR:
     destroy:
       success: Cliente excluído com sucesso.
       error: Não foi possivel excluir o cliente.
+  consultants:
+    create:
+      success: Consultor Criado com sucesso.
+      error: Não foi possivel criar Consultor.
+    update:
+      success: Consultor atualizado com sucesso.
+      error: Não foi possivel atualizar o Consultor.
+    destroy:
+      success: Consultor excluído com sucesso.
+      error: Não foi possivel excluir o Consultor.
+  treatments:
+    create:
+      success: Chamado criado com sucesso.
+      error: Não foi possivel criar Chamado.
+    update:
+      success: Chamado atualizado com sucesso.
+      error: Não foi possivel atualizar o Chamado.
+    destroy:
+      success: Chamado foi excluído com sucesso.
+      error: Não foi possivel excluir o Chamado.
 
   activerecord:
     errors:

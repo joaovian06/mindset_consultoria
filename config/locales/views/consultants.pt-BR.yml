@@ -1,0 +1,17 @@
+pt-BR:
+  consultants:
+    index:
+      consultants: Consultores
+      new_consultant: Novo Consultor
+    show: &infos
+      consultant_attributes: Atributos do Consultor
+      back: Voltar
+      edit: Editar
+      delete: Deletar
+      delete_data_confirm: Você tem certeza?
+    edit:
+      edit_consultant_attributes: Editar atributos do Consultor
+      <<: *infos
+    new:
+      new_consultant: Novo Consultor
+      <<: *infos
