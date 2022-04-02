@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_11_02_124742) do
 
-  create_table "consultants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "consultants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "cpf"
     t.integer "level"
     t.string "registration_num"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_124742) do
     t.string "name"
   end
 
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "cnpj"
     t.integer "status"
     t.string "agreement"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_124742) do
     t.string "corporate_name"
   end
 
-  create_table "treatments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "treatments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "treatment_type"
     t.integer "status", default: 0
     t.integer "rate"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_124742) do
     t.index ["customer_id"], name: "index_treatments_on_customer_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

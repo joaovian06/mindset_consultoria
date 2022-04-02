@@ -1,0 +1,13 @@
+.row.py-5
+  .col
+    .container-fluid.text-left
+      .card
+        .card-header
+          .row
+            %h2.col-11= t('.new_customer')
+            .col
+              %ul.nav
+                %li.nav-item
+                  %a.nav-link= link_to t('.back'), customers_path
+        .card-body
+          = render 'form'

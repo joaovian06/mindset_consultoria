@@ -1,0 +1,24 @@
+pt-BR:
+  activerecord:
+    models:
+      treatment: Chamado
+    attributes:
+      treatment:
+        rate: Avaliação
+        description: Descrição
+        budget: Orçamento
+        title: Título
+        consultant: Consultor
+        customer: Cliente
+        treatment_type: Tipo do chamado
+      treatment/status:
+        confirmation: Aguardando confirmação
+        analyze: Em análise
+        in_progress: Em andamento
+        pending_budget: Aguardando Orçamento
+        pending_payment: Aguardando pagamento
+      treatment/treatment_type:
+        organizational: Organizacional
+        accounting: Contábil
+        procedure: Processos
+        project: Projetos

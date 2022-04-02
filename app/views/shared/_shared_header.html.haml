@@ -1,0 +1,18 @@
+= stylesheet_link_tag 'views/shared/shared_header'
+.container-fluid.px-0.fixed-top
+  %nav.navbar.navbar-expand-lg.navbar-light.bg-dark.justify-content-between
+    = link_to root_path, class: 'navbar-brand text-white' do
+      = image_tag "logo.png", size: "80x80", class: 'logo'
+    %button.navbar-toggler{ type: 'button', data: { toggle: 'collapse', target: '#navbarNav' }, 'arial-controls': 'navbarSuportedContent', 'aria-expanded': 'flase', 'aria-label': 'Toggle navigation' }
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarNav
+      %ul.navbar-nav.mr-auto
+        %li.nav-item
+          = link_to t('.customers'), customers_path, class: 'nav-link text-white'
+        %li.nav-item
+          = link_to t('.consultants'), consultants_path, class: 'nav-link text-white'
+        %li.nav-item
+          = link_to t('.treatments'), treatments_path, class: 'nav-link text-white'
+      %ul.navbar-nav
+        %li.nav-item
+          = render 'login_links'
